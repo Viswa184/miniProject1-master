@@ -1,0 +1,36 @@
+<nav class="navbar navbar-light bg-primary">
+  <div class="container fluid">
+      <img width="60" height="60" alt="Angular Logo"
+          src="https://th.bing.com/th/id/OIP.Kxk8g_02axBSJi3IQ0TxRgHaHa?w=212&h=213&c=7&r=0&o=5&dpr=1.5&pid=1.7" />
+      <h2>Restuarant</h2>
+      <div class="d-flex">
+        
+          <button routerLink="/Login" class="btn btn-danger mx-3"><b>Logout</b></button>
+              
+      </div>
+  </div>
+</nav>
+
+
+
+<div class="card">
+  <h2 style="text-align:center;">Contact Form</h2>
+  <form style="margin-left:35%; width: 220px;" #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+      <p style="margin-top: 10px; padding-top: 40px;">
+      <label for="name" style="font-size: 25px; color: rgb(5, 4, 4);">Name</label><br>
+      <input type="text" id="name" name="name" ngModel required style="border-radius: 10px; width: 400px; height: 30px;"><br><br>
+      <label for="email" style="font-size: 25px;color: rgb(4, 2, 2);">Email</label><br>
+      <input type="email" id="email" name="email" ngModel required style="border-radius: 10px;width: 400px; height: 30px;"><br><br>
+
+      <label for="phonenumber" style="font-size: 25px;color: rgb(10, 9, 9);">Phone Number</label><br>
+      <input type="phonenumber" id="phonenumber" name="phonenumber" ngModel required style="border-radius: 10px;border-width: 2px;width: 400px; height: 30px;"><br><br>
+
+      <label for="comment" style="font-size: 25px;color: rgb(5, 4, 4);">Comment</label><br>
+      <textarea id="comment" name="comment" ngModel required style="border-radius: 10px; border-width: 2px;width: 400px; height: 100px;"></textarea></p><br>
+
+      <button type="submit" style="margin-left: 40%; cursor: pointer;height:40px; width: 100px;border-radius: 10px; background-color: rgb(14, 9, 9); color: white;font-weight: bold;">Submit</button><br><br><br>
+
+  </form>
+
+</div>
+

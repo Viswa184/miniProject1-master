@@ -1,0 +1,224 @@
+
+<nav class="navbar navbar-light bg-primary">
+    <div class="container fluid">
+        <img width="60" height="60" alt="Angular Logo"
+            src="https://th.bing.com/th/id/OIP.Kxk8g_02axBSJi3IQ0TxRgHaHa?w=212&h=213&c=7&r=0&o=5&dpr=1.5&pid=1.7" />
+        <h2>Restuarant</h2>
+        <div class="d-flex">
+          <button routerLink="/userCart" class="btn btn-danger mx-3"><b>Cart</b></button>
+            <button routerLink="/Login" class="btn btn-danger mx-3"><b>Logout</b></button>
+                
+        </div>
+    </div>
+  </nav>
+  
+  <p style="text-align:center;margin: 0; font-size: 20px;">Welcome back, <strong>{{name}}</strong></p>
+  <br/><br/>
+  
+  <div class="container">
+    <div class="row">
+        <ng-container *ngFor="let user of jsonData">
+            <div class="card col-md-3">
+                <img src={{user.item_img}} alt="Image" height="100px" width="100px">
+                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{user.item_name}}</h5>
+                <!-- <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p> -->
+                <p><strong>Price:</strong>{{user.item_price}}</p>
+                <button class="btn btn-primary" (click)="addCart(user)">Add to cart</button>
+            </div>
+        </ng-container>
+  
+    </div>
+  </div>
+  
+  
+  <!-- <div class="row">
+    <div class="column" *ngFor="let item of jsonData">
+        <mat-card>
+            <mat-card-content>
+                <img src={{item.item_img}} alt="image" style="width: 70px; height: 70px; float: left; margin-left:10%"><br>
+                <div style="float: right; margin-right: 15%;">
+                <p>{{ item.item_name }}</p>
+                 <p>{{ item.Desc }}</p>
+                <p>{{ item.item_price }}</p></div>
+                <div style="margin-top:40%"></div>
+                <button mat-raised-button (click)="addCart(item)" style="margin-left:50px;">Add to Cart</button>
+                <button mat-raised-button color="primary" (click)="get_Item(item.id)" style="margin-left:30px">Details</button>
+            </mat-card-content>
+        </mat-card>
+    </div> -->
+  
+    
+  
+    <!-- <br> 
+    <form style="margin: auto; width: 1000px;"> 
+      <div class="container">
+          <h2>Product Details</h2>
+          <table class="table table-sm table-bordered m-t-2">
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Image</th>
+              <th>Price</th>
+              <th>Add Cart/Details</th> 
+            </tr>
+            <tr *ngFor="let user of jsonData">
+              <td>{{user.id}}</td>
+              <td>{{user.item_name}}</td>
+              <td><img src={{user.item_img}} alt="Image" height="100px" width="100px" ></td>
+              <td>{{user.item_price}}</td>
+              <td>
+  
+                <button (click)="addCart(user)" style="background-color: rgb(14, 9, 9); color: white;font-weight: bold;" >Add</button>&nbsp;&nbsp;&nbsp;
+                <button (click)="get_Item(user.id)" style="background-color: rgb(14, 9, 9); color: white;font-weight: bold;">Details</button>
+            </td>
+            </tr>
+          </table>
+        </div>
+      </form> -->
+  
+  <br><br>
+  <!-- <div *ngIf="selectedProduct">
+    <mat-card style="width: 30%; margin-left: 35%;background-color:rgb(184, 213, 184);">
+        <mat-card-content>
+                <h3 style="font-weight: bold;">Product Details:</h3>
+                <img src={{selectedProduct.item_img}} alt="Image" height="100px" width="100px" >
+                Name: {{ selectedProduct.item_name }}<br>
+                Price: {{ selectedProduct.item_price }}<br> -->
+                
+                <!-- <button mat-raised-button color="warn" (click)="Addtocart(selectedProduct)"style="margin-left:30%">Add to Cart</button>
+        </mat-card-content>
+    </mat-card><br><br>
+  </div> -->
+  
+  
+  
+  <!-- <div *ngIf="currentUser">
+    <h2>Welcome, {{ currentUser.username }}!</h2>
+     Display other user info
+  </div>
+  <form style="margin: auto; width: 1000px;"> 
+      <div class="container">
+          <h2>Product Details</h2>
+          <table class="table table-sm table-bordered m-t-2">
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Image</th>
+              <th>Price</th>
+              <th>Add Cart/Details</th> 
+            </tr>
+            <tr *ngFor="let user of jsonData">
+              <td>{{user.id}}</td>
+              <td>{{user.item_name}}</td>
+              <td><img src={{user.item_img}} alt="Image" height="100px" width="100px" ></td>
+              <td>{{user.item_price}}</td>
+              <td>
+  
+                <button (click)="addCart(user)" style="background-color: rgb(14, 9, 9); color: white;font-weight: bold;" >Add</button>&nbsp;&nbsp;&nbsp;
+                <button (click)="get_Item(user.id)" style="background-color: rgb(14, 9, 9); color: white;font-weight: bold;">Details</button>
+            </td>
+            </tr>
+          </table>
+        </div>
+      </form>
+  
+  
+      <form style="margin: auto; width: 200px;"> 
+        <div class="container">
+            <h2>Selected Item Details</h2>
+            <table class="table table-sm table-bordered m-t-2">
+              <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Image</th>
+                <th>Price</th>
+                
+              </tr>
+              <tr *ngIf="selectedProduct">
+                <td>{{selectedProduct.id}}</td>
+                <td>{{selectedProduct.item_name}}</td>
+                <td><img src={{selectedProduct.item_img}} alt="Image" height="100px" width="100px" ></td>
+                <td>{{selectedProduct.item_price}}</td>
+                
+              </tr>
+            </table>
+          </div>
+        </form>    -->
+  
+  
+        
+  <!-- <div class="container mx-auto mt-4">
+    <div class="row">
+      <div class="col-md-4">
+        <div *ngFor="let user of jsonData">
+          <ng-container>
+            <div class="card">
+                
+              <img src={{user.item_img}} alt="Image" height="100px" width="100px" 
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">{{user.item_name}}</h5>
+                <p class="card-text">
+                  {{user.item_price}}
+                </p>
+                 <button routerLink="/Cart" class="btn btn-primary">Add to Cart</button>
+                <button (click)="addCart(user)" style="background-color: rgb(14, 9, 9); color: white;font-weight: bold;">Add</button>
+              </div>
+            </div>
+              </div>
+              </div>
+          </ng-container>
+        </div>
+        
+  
+      </div>        
+      </div>    
+       
+  </div> -->
+  
+        
+        <!-- <div class="row">
+          <div class="col-sm-6"> 
+            <div class="card-deck"></div>    
+        <div class="card-group">
+          <ng-container>
+           <div *ngFor="let user of jsonData">
+               <div class="card">
+                
+                <img src={{user.item_img}} alt="Image" height="100px" width="100px" 
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">{{user.item_name}}</h5>
+                  <p class="card-text">
+                    {{user.item_price}}
+                  </p>
+                   <button routerLink="/Cart" class="btn btn-primary">Add to Cart</button>
+                  <button (click)="addCart(user)" style="background-color: rgb(14, 9, 9); color: white;font-weight: bold;">Add</button>
+                </div>
+              </div>
+           </div>
+         </ng-container>
+        </div></div></div> -->
+         
+      
+      
+      <!-- <ng-container *ngIf="products.length ==0">
+          <div class="container">
+              <div class="card">
+                  <h5 class="card-title">My Cart</h5>
+              </div>
+              <div class="center">
+                  <img src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90" alt="">
+                  <h4>Your cart is empty!</h4>
+                  <h6>Add item to it now</h6>
+                  <button routerLink="/products" class="btn btn-primary">Shop Now</button>
+              </div>
+          </div>
+      </ng-container>
+  
+      </form> -->
+     

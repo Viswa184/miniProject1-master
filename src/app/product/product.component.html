@@ -1,0 +1,64 @@
+<nav class="navbar navbar-light bg-primary">
+  <div class="container fluid">
+      <img width="60" height="60" alt="Angular Logo"
+          src="https://th.bing.com/th/id/OIP.Kxk8g_02axBSJi3IQ0TxRgHaHa?w=212&h=213&c=7&r=0&o=5&dpr=1.5&pid=1.7" />
+      <h2>Restuarant</h2>
+      <div class="d-flex">
+        
+        <button routerLink="/itemCreate" class="btn btn-danger mx-3"><b>Create</b></button>
+          <button routerLink="/Login" class="btn btn-danger mx-3"><b>Logout</b></button>
+              
+      </div>
+  </div>
+</nav>
+
+<br/>
+
+<div class="container">
+  <div class="row">
+      <ng-container *ngFor="let user of jsonData">
+          <div class="card col-md-3">
+              <img src={{user.item_img}} alt="Image" height="100px" width="200px">
+              <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{user.item_name}}</h5>
+              <!-- <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p> -->
+              <p><strong>Price:</strong>{{user.item_price}}</p>
+              <button class="btn btn-primary" (click)="onEdit(user)">Update</button>
+              <button class="btn btn-primary" (click)="delete_Item(user.id)">Delete</button>
+
+          </div>
+      </ng-container>
+
+  </div>
+</div>
+
+
+<!-- <form style="margin: auto; width: 1000px;"> 
+    <div class="container">
+        <h2 >Product Details</h2>
+        <table class="table table-sm table-bordered m-t-2">
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Price</th>
+            <th>Update/Delete</th>
+          </tr>
+          <tr *ngFor="let user of jsonData">
+            <td>{{user.id}}</td>
+            <td>{{user.item_name}}</td>
+            <td><img src={{user.item_img}} alt="Image" height="100px" widht="100px" ></td>
+            <td>{{user.item_price}}</td>
+            <td>
+              <button (click)="onEdit(user)" style="background-color: rgb(14, 9, 9); color: white;font-weight: bold;;" >Edit</button>&nbsp;&nbsp;&nbsp;
+              <button (click)="delete_Item(user.id)" style="background-color: rgb(14, 9, 9); color: white;font-weight: bold;">Delete</button>
+              
+              
+          </td>
+          </tr>
+        </table>
+      </div>
+
+    </form> -->
+   
+  
+    

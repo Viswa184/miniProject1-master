@@ -1,0 +1,107 @@
+<nav class="navbar navbar-light bg-primary">
+  <div class="container fluid">
+      <img width="60" height="60" alt="Angular Logo"
+          src="https://th.bing.com/th/id/OIP.Kxk8g_02axBSJi3IQ0TxRgHaHa?w=212&h=213&c=7&r=0&o=5&dpr=1.5&pid=1.7" />
+      <h2>Restuarant</h2>
+      <div class="d-flex">
+          <button routerLink="/Login" class="btn btn-danger mx-3"><b>Login</b></button>
+          <button routerLink="/Register" class="btn btn-danger mx-3"><b>Register</b></button>
+                      
+      </div>
+  </div>
+</nav>
+
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="https://i0.wp.com/discordhome.com/user_upload/emojis/AS0006297_15-gifemoji.gif"
+          class="img-fluid" alt="Sample image">
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+          
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <label for="username" style="font-size: 15px; color: rgb(5, 4, 4);">UserName</label><br>
+             <input type="text" id="username" name="username" [(ngModel)]="username"  style="border-radius: 10px; width: 400px; height: 30px;" required>
+          </div>
+
+          <!-- Password input -->
+          <div class="form-outline mb-3">
+            <label for="password" style="font-size: 15px;color: rgb(4, 2, 2);">Password</label><br>
+            <input type="password" id="password" name="password" [(ngModel)]="password" style="border-radius: 10px;width: 400px; height: 30px;" required>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center">
+            <!-- Checkbox -->
+            <div class="form-check mb-0">
+              <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+              <label class="form-check-label" for="form2Example3">
+                Remember me
+              </label>
+            </div>
+            <a href="#!" class="text-body">Forgot password?</a>
+          </div>
+
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="submit" class="btn btn-primary btn-lg"
+              style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href=""
+                class="link-danger" routerLink="/Register">Register</a></p>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<!-- <div class="card">
+  <h2 style="text-align:center;">Login Form</h2>
+  <form style="margin-left:35%; width: 120px;" #loginForm="ngForm" (ngSubmit)="login()">
+      <p style="margin-top: 10px; padding-top: 40px;">
+
+      <label for="username" style="font-size: 15px; color: rgb(5, 4, 4);">UserName</label><br>
+      <input type="text" id="username" name="username" [(ngModel)]="username" required style="border-radius: 10px; width: 400px; height: 30px;"><br><br>
+     
+      <label for="password" style="font-size: 15px;color: rgb(4, 2, 2);">Password</label><br>
+      <input type="password" id="password" name="password" [(ngModel)]="password" required style="border-radius: 10px;width: 400px; height: 30px;"><br><br>
+
+      <button type="submit" style="margin-left: 40%; cursor: pointer;height:40px; width: 100px;border-radius: 10px; background-color: rgb(14, 9, 9); color: white;font-weight: bold;">Submit</button><br><br><br>
+
+  </form>
+
+</div> -->
+
+
+<!-- <body>       
+  <form style="margin: auto; width: 220px;" (ngSubmit)="login()">  
+      <h3> Login Form </h3>   
+      <div class="container"> 
+        <br/> <br/> 
+          <label >Username : </label>   
+          <input type="text" placeholder="Enter Username" name="username" [(ngModel)]="username" required> 
+          <br/>
+          <br/>
+          <label>Password : </label>   
+          <input type="password" placeholder="Enter Password" name="password" [(ngModel)]="password" required>
+          <br/>
+          <br/>  
+          <button type="submit">Login</button>      
+      </div>  
+      <a style="color:rgb(1, 3, 5);margin-top:10px" routerLink="/Register"
+       style="font-family: times, serif; font-size:12px; ;">New User? Go to SignUp</a>
+      </form>   
+</body> 
+ 
+  
+<br><br><br><br><br><br><br><br>
+ -->

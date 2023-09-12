@@ -1,0 +1,35 @@
+<nav class="navbar navbar-light bg-primary">
+    <div class="container fluid">
+        <img width="60" height="60" alt="Angular Logo"
+            src="https://th.bing.com/th/id/OIP.Kxk8g_02axBSJi3IQ0TxRgHaHa?w=212&h=213&c=7&r=0&o=5&dpr=1.5&pid=1.7" />
+        <h2>Restuarant</h2>
+        <div class="d-flex">
+            <button routerLink="/Product" class="btn btn-danger mx-3"><b>Home</b></button>
+            <button routerLink="/Login" class="btn btn-danger mx-3"><b>Logout</b></button>
+                
+        </div>
+    </div>
+  </nav>
+  
+
+<div class="card">
+    <h2 style="text-align:center;">Update Item </h2>
+    <form style="margin-left:35%; width: 220px;" #updateForm="ngForm" (ngSubmit)="onSubmit(updateForm)">
+        <p style="margin-top: 10px; padding-top: 40px;">
+        <label for="item_name" style="font-size: 25px; color: rgb(5, 4, 4);">Name</label><br>
+        <input type="text" id="item_name" name="item_name" [(ngModel)]="item_name" required style="border-radius: 10px; width: 400px; height: 30px;"><br><br>
+
+        <!-- <label for="id" style="font-size: 25px; color: rgb(5, 4, 4);">Item Id</label><br> -->
+        <input type="number" id="id" name="id" [(ngModel)] = "id" required hidden style="border-radius: 10px; width: 400px; height: 30px;">
+        <input type="text" id="item_img" name="item_img" [(ngModel)] = "item_img" required hidden style="border-radius: 10px; width: 400px; height: 30px;">
+
+        <label for="item_price" style="font-size: 25px;color: rgb(10, 9, 9);">Price</label><br>
+        <input type="number" id="item_price" name="item_price" [(ngModel)]="item_price" required style="border-radius: 10px;border-width: 2px;width: 400px; height: 30px;"><br><br>
+
+        <button type="submit" style="margin-left: 40%; cursor: pointer;height:40px; width: 100px;border-radius: 10px; background-color: rgb(14, 9, 9); color: white;font-weight: bold;">Submit</button><br><br><br>
+  
+    </form>
+    <br/><br/><br/>
+  
+  </div>
+ 

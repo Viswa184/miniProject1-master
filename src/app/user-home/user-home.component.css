@@ -1,0 +1,13 @@
+.my-card {
+  margin: 1000px; /* Adjust the margin value as needed */
+}
+
+div {
+  row-gap: 10px;
+  /* column-gap: 1px; */
+}
+
+#grid-container {
+  display: grid;
+  row-gap: 50px;
+}
